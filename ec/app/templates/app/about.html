@@ -1,0 +1,49 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} About {% endblock title %}
+{% block banner_slider %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'app/images/banner/b1.jpg' %}" class="d-block w-100" alt="Company Banner 1">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/images/banner/b2.jpg' %}" class="d-block w-100" alt="Company Banner 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/images/banner/b3.jpg' %}" class="d-block w-100" alt="Company Banner 3">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/images/banner/b4.jpg' %}" class="d-block w-100" alt="Company Banner 4">
+        </div>
+    </div>
+</div>
+{% endblock banner_slider %}
+
+{% block main-content %}
+<div class="container mt-3">
+    <br>
+    <h2 class="text-center">About Us</h2>
+    <br>
+    <div class="row container">
+        <p class="fs-4 text-center">
+            Welcome to our services ! We are an online Watches Store located in tunisia and we’re passionate about watches and dedicated to offering a curated selection of timepieces
+            that blend tradition with innovation. Our collection features everything from luxury classics to modern designs,
+            ensuring you'll find a watch that suits your style and needs. Our knowledgeable team is here to help you find the perfect watch
+            and provide exceptional service.
+            Thank you for choosing us!
+        </p>
+    </div>
+    <br><br>
+    <h2 class="text-center">Mission</h2>
+    <br>
+    <div class="row container">
+        <p class="fs-4 text-center">
+            our mission is to offer a diverse range of high-quality watches that cater to every style and occasion.
+            We are committed to exceptional service and expert advice, ensuring you find a timepiece that you’ll cherish.
+            Our goal is to enhance your watch experience with both timeless elegance and modern innovation.
+        </p>
+    </div>
+</div>
+<br><br>
+{% endblock main-content %}

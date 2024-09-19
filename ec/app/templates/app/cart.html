@@ -1,0 +1,15 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart.products.all %}
+            <li>{{ item.name }} - {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
