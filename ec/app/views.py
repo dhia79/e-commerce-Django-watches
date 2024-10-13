@@ -185,7 +185,7 @@ def show_cart(request):
     for p in cart:
         value = p.quantity * p.product.discounted_price 
         amount = amount + value
-    totalamount = amount + 40
+    totalamount = amount + 7
     totalitem=0
     wishlist=0
 
@@ -205,7 +205,7 @@ def show_wishlist(request):
         wishitem = len(Wishlist.objects.filter(user=request.user))
 
     # Fetch the wishlist products for the current user
-    wishlisted_products = Wishlist.objects.filter(user=user).select_related('product')
+    wishlisted_products = Wishlist.objects.filter(user=user).select_related('product').distinct()
 
     # Pass data to the template
     context = {
@@ -232,7 +232,7 @@ class Checkout(View):
         for p in cart_items:
             value = p.quantity * p.product.discounted_price
             famount = famount + value
-        totalamount = famount + 40
+        totalamount = famount + 7
         razoramount=int (totalamount*100)
         client = razorpay.Client(auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET))
         data = {"amount": razoramount,"currency": "INR","receipt": "order_rcptid_12"}
@@ -309,7 +309,7 @@ def plus_cart(request):
         for p in cart:
             value = p.quantity * p.product.discounted_price
             amount = amount + value
-        totalamount = amount + 40
+        totalamount = amount + 7
 
         #print (prod_id)
         data={
@@ -333,7 +333,7 @@ def minus_cart(request):
         for p in cart:
             value = p.quantity * p.product.discounted_price
             amount += value
-        totalamount = amount + 40
+        totalamount = amount + 7
 
         data = {
             'quantity': c.quantity,
@@ -353,7 +353,7 @@ def remove_cart(request):
         for p in cart:
             value = p.quantity * p.product.discounted_price
             amount += value
-        totalamount = amount + 40
+        totalamount = amount + 7
 
         data = {
             'amount': amount,

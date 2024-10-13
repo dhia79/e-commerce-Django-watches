@@ -50,6 +50,6 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='app/password_reset_complete.html'), name='password_reset_complete'),  # Corrected missing quotes
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin. site. site_header = "Dhia Dairy"
-admin. site. site_title = "Dhia Dairy"
-admin. site. site_index_title = "Welcome to Dhia Shop"
+admin. site. site_header = "Admin Dairy"
+admin. site. site_title = "Admin Dairy"
+admin. site. site_index_title = "Welcome to Watches Shop"

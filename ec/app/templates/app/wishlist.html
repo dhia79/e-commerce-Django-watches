@@ -11,7 +11,7 @@
             <div class="col-sm-4 text-center mb-4 hover-shadow">
               <a href="{% url 'product-detail' prod.id %}" class="btn">
                 <div>
-                  <img src="{{ prod.image.url }}" width="300px" height="200px" />
+                  <img src="{{ prod.product_image.url }}" width="230" height="200" alt="{{ prod.title }}">
                   <div class="fw-bold">{{ prod.title }}</div>
                   <div class="fw-bold text-danger">
                     Dt. {{ prod.discounted_price }}/-
@@ -19,15 +19,15 @@
                       {{ prod.selling_price }}
                     </small>
                   </div>
-                  <!-- Wishlist Button -->
-                  <form action="{% url 'minus-wishlist' prod.id %}" method="post" class="d-inline">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger shadow px-5 py-2 mt-2">
-                      <i class="fas fa-heart fa-lg"></i> Remove from Wishlist
-                    </button>
-                  </form>
                 </div>
               </a>
+              <!-- Wishlist Button -->
+              <form action="{% url 'minus-wishlist' prod.id %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger shadow px-5 py-2 mt-2">
+                  <i class="fas fa-heart fa-lg"></i> Remove from Wishlist
+                </button>
+              </form>
             </div>
           {% endfor %}
         {% else %}
